@@ -1,0 +1,18 @@
+<form class="quizForm" [formGroup]="quizForm" (submit)="saveQuiz()" autocomplete="off">
+  <h2 class="title">Create Test</h2>
+  <input class="quizInput" placeholder="Test Title" formControlName="quizTitle" id="quizTitle">
+  <div formArrayName="questions">
+    <div class="questionForm" *ngFor="let question of formData(quizForm).controls; let nr = index">
+      <app-question (deleteQuestionId)="deleteQuestion($event)" [mode]="mode" [question]="question"
+                    [nr]="nr"></app-question>
+    </div>
+  </div>
+  <button (click)="addQuestion()" type="button" class="addQuestion">
+    Add Question
+  </button>
+  <input class="quizCodeInput" placeholder="Test Code" formControlName="quizCode">
+  <div class="centerButton">
+    <button class="saveTest" type="submit">Save Test</button>
+  </div>
+
+</form>

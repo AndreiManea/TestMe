@@ -1,0 +1,74 @@
+@import "src/assets/scss/colors";
+@import "src/assets/scss/createTest";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+.answerForm {
+  margin: 0 3%;
+
+  .answerInput {
+    @include input;
+    margin-top: 0;
+    font-size: 10px;
+    width: 35%;
+
+    &::placeholder {
+      color: #FFFFFF;
+      font-size: 10px;
+    }
+  }
+
+  mat-radio-group {
+
+    mat-radio-button {
+      font-size: 10px;
+      margin-right: 10px;
+      vertical-align: sub;
+
+      &:first-child {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .deleteAnswer {
+    font-size: 13px;
+    color: $tertiary;
+    vertical-align: middle;
+    background: $incorrect;
+    border: 1px solid $border;
+    border-radius: 25%;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+}
+
+@include media-breakpoint-up(sm) {
+  .answerForm{
+    .answerInput {
+      font-size: 15px;
+      &::placeholder {
+        font-size: 15px;
+      }
+    }
+    mat-radio-group {
+
+      mat-radio-button {
+        font-size: 15px;
+      }
+    }
+    .deleteAnswer {
+      font-size: 15px;
+    }
+  }
+}
+
+@include media-breakpoint-up(md){
+
+}
+

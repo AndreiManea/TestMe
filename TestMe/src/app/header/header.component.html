@@ -1,0 +1,69 @@
+<nav class="navbar sticky-top">
+  <div class="sidebar" [ngClass]="sideNav ? 'sidebarToggled' : 'sidebar'">
+    <div class="user">
+      <img src="../../assets/img/user.png" alt="">
+      <h5>{{authStatus.userName}}</h5>
+      <h6>{{authStatus.userType}}</h6>
+      <button id="closeSideNav" (click)="toggleSideNav()"><i class="fas fa-times"></i></button>
+    </div>
+    <ul class="navbar-nav" (click)="toggleSideNav()">
+        <a  class="nav-item" *ngIf="authStatus.userType === 'student' " routerLink="/takeQuiz" routerLinkActive="active">
+          <i class="fas fa-edit"></i> Take Test</a>
+        <a class="nav-item" *ngIf="authStatus.userType === 'student' "  routerLink="/resultsStudent" routerLinkActive="active">
+          <i class="fas fa-book-open"></i> View Tests Taken</a>
+        <a class="nav-item" *ngIf="authStatus.userType === 'teacher'"  routerLink="/create" routerLinkActive="active">
+          <i class="fas fa-edit"></i> Create Test</a>
+        <a class="nav-item" *ngIf="authStatus.userType === 'teacher'" routerLink="/list" routerLinkActive="active">
+          <i class="fas fa-book-open"></i> View Tests Created</a>
+        <a class="nav-item" *ngIf="authStatus.userType === 'teacher'" routerLink="/resultsTeacher" routerLinkActive="active">
+          <i class="fas fa-chart-pie"></i> View Results</a>
+
+
+        <button class="nav-item"  *ngIf="authStatus.authStatus" (click)="logoutUser()">
+          <i class="fas fa-sign-out-alt"></i> Logout</button>
+    </ul>
+  </div>
+
+
+
+  <button *ngIf="authStatus.authStatus " class="toggle" (click)="toggleSideNav()" [ngClass]="sideNav ? 'clicked' : 'toggle' "><i class="fas fa-bars"></i></button>
+
+
+
+
+
+
+
+  <div class="userDesktop" *ngIf="authStatus.authStatus">
+    <img src="../../assets/img/user.png" alt="">
+    <div class="userData">
+      <h5>{{authStatus.userName}}</h5>
+      <h6>{{authStatus.userType}}</h6>
+    </div>
+  </div>
+  <a class="navbar-brand">
+    <img src="../../assets/img/logo.png">
+  </a>
+  <div id="navbarDesktop" *ngIf="authStatus.authStatus">
+    <ul class="navbar-nav">
+      <li class="nav-item" *ngIf="authStatus.userType === 'student' ">
+        <a  routerLink="/takeQuiz" routerLinkActive="active"><i class="fas fa-edit"></i> Take Test</a>
+      </li>
+      <li class="nav-item" *ngIf="authStatus.userType === 'student' ">
+        <a  routerLink="/resultsStudent" routerLinkActive="active"><i class="fas fa-book-open"></i> View Tests Taken</a>
+      </li>
+      <li class="nav-item" *ngIf="authStatus.userType === 'teacher'">
+        <a  routerLink="/create" routerLinkActive="active"><i class="fas fa-edit"></i> Create Test</a>
+      </li>
+      <li class="nav-item" *ngIf="authStatus.userType === 'teacher'">
+        <a  routerLink="/list" routerLinkActive="active"><i class="fas fa-book-open"></i> View Tests Created</a>
+      </li>
+      <li class="nav-item" *ngIf="authStatus.userType === 'teacher'">
+        <a  routerLink="/resultsTeacher" routerLinkActive="active"><i class="fas fa-chart-pie"></i> View Results</a>
+      </li>
+      <li class="nav-item"  *ngIf="authStatus.authStatus">
+        <button (click)="logoutUser()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>

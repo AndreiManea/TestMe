@@ -1,0 +1,10 @@
+<div class="answerForm" [formGroup]="answer" >
+    <input class="answerInput" matInput placeholder="Answer {{nr+1}}" [value]="answerValue?.answerTitle" required formControlName="answerTitle">
+  <mat-radio-group formControlName="correct">
+    <mat-radio-button color="primary"   value="true">Correct</mat-radio-button>
+    <mat-radio-button color="warn"      value="false">Incorrect</mat-radio-button>
+  </mat-radio-group>
+  <button  (click)="removeAnswer(answer.controls.id.value)"
+          type="button"  class="deleteAnswer"><i class="fas fa-minus-circle"></i></button>
+</div>
+

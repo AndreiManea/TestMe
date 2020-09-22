@@ -1,0 +1,25 @@
+<div class="registerPage">
+  <h1>REGISTER</h1>
+  <form class="registerForm" #registerForm="ngForm" (submit)="registerUser(registerForm)" autocomplete="off">
+    <label for="firstName">First Name</label>
+    <input class="form-control" placeholder="Marco" type="text" ngModel name="firstName" id="firstName" required="true">
+    <label for="firstName">Last Name</label>
+    <input class="form-control" placeholder="Pollo" type="text" ngModel name="lastName" id="lastName" required="true">
+    <label for="email">Email</label>
+    <input placeholder="student/teacher@e-uvt.ro" class="form-control" type="email" ngModel name="email" id="email"
+           required="true">
+    <p class="errorMessage" *ngIf="invalidEmail">Please enter an e-uvt.ro valid e-mail</p>
+
+    <label for="password">Password</label>
+    <input placeholder="Create Password" class="form-control" type="password" ngModel name="password" id="password"
+           required="true">
+    <label for="userType">User Type</label>
+    <mat-radio-group ngModel name="userType" value="userType" id="userType" required="true">
+      <mat-radio-button color="primary" value="student">Student</mat-radio-button>
+      <mat-radio-button color="warn" value="teacher">Teacher</mat-radio-button>
+    </mat-radio-group>
+    <p class="errorMessage" *ngIf="invalidForm">Please fill all the fields before submitting.</p>
+    <button type="submit">CREATE ACCOUNT</button>
+  </form>
+</div>
+

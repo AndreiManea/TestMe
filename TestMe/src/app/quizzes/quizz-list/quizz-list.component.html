@@ -1,0 +1,29 @@
+
+  <div class="list" *ngIf=" mode === 'list'">
+    <h2>Your Tests</h2>
+    <h3 *ngIf="quizzes.length === 0">No tests created yet</h3>
+    <div class="row">
+      <div class="card col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let quiz of quizzes">
+        <div class="card-body">
+          <h2 class="card-title">{{quiz.quizTitle}}</h2>
+          <button class="view btn btn-primary" (click)="viewQuiz(quiz._id)">View Test</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="view jumbotron" *ngIf=" mode === 'view' ">
+    <h2 class="title">{{currentQuiz.quizTitle}}</h2>
+    <div class="question" *ngFor="let question of currentQuiz.questions; let i = index" [attr.data-index] = 'i'>
+        <h3 class="questionTitle"><span>{{i + 1}}</span> {{question.questionTitle}}</h3>
+        <div class="answer" *ngFor="let answer of question.answers">
+          <h4 class="answerTitle" [ngClass]="{'correct': answer.correct === 'true', 'wrong': answer.correct === 'false'}"> {{answer.answerTitle}}</h4>
+        </div>
+    </div>
+    <h2 class="quizCode">Quiz Code: {{currentQuiz.quizCode}}</h2>
+    <hr>
+    <div class="utilityButtons">
+      <a class="back" routerLink="/list" >BACK</a>
+      <button class="edit"   (click)="editQuiz()">EDIT</button>
+      <button class="delete"  (click)="deleteQuiz()">DELETE</button>
+    </div>
+  </div>

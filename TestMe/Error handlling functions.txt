@@ -1,0 +1,7 @@
+function checkEmail (email) { 
+	if (email.slice(email.length - 8) === correctEmail){
+		return true; 
+	} else{
+		return false
+	} 
+}; 

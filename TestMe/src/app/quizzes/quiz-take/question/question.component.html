@@ -1,0 +1,15 @@
+<div class="questionData">
+  <h4 class="questionNr" *ngIf="questions.length > questionNr">{{questionNr + 1}}/{{questions.length}}</h4>
+  <hr>
+  <h4 class="questionName" *ngIf="questions.length > questionNr">{{question?.controls.questionTitle.value}}</h4>
+  <h4 class="finished" *ngIf="questions.length <= questionNr">You have finished the Quiz!</h4>
+</div>
+<div class="questionForm" *ngIf="questionNr < questions.length" [formGroup]= "question">
+  <div  *ngFor="let answer of answersData(question)" >
+    <app-take-answer [answer]="answer"></app-take-answer>
+  </div>
+</div>
+<div class="centerButton">
+  <button *ngIf="questionNr !== questions.length" (click)="submitQuestion()">Submit Question</button>
+</div>
+

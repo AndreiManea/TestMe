@@ -1,0 +1,48 @@
+@import "src/assets/scss/colors";
+@import "src/assets/scss/results";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+h2{
+ @include resultsTitle;
+}
+table{
+  @include table;
+  thead{
+    th{
+      @include th;
+    }
+
+  }
+  tr{
+    td{
+      text-align: center;
+      background: $secondary;
+      border: 1px solid $border;
+      font-size: 10px;
+      vertical-align: middle;
+    }
+    .title{
+      font-size: 12px;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm){
+  table{
+    thead{
+      th{
+        font-size: 20px;
+      }
+
+    }
+    tr{
+      td{
+        font-size: 15px;
+      }
+      .title{
+        font-size: 17px;
+      }
+    }
+  }
+}

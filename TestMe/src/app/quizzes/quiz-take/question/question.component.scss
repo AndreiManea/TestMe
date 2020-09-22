@@ -1,0 +1,50 @@
+@import "src/assets/scss/colors";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+.questionForm, .questionData{
+  display: flex;
+  flex-direction: column;
+}
+.questionForm{
+  margin-left: 15%;
+}
+.centerButton{
+  text-align: center;
+  button{
+    background: $secondary;
+    color: $tertiary;
+    width: 200px;
+    margin: 20px auto;
+    padding: 0px 10px;
+    border: 1px solid $border;
+  }
+}
+.questionData{
+  h4{
+    font-size: 17px;
+    margin-left: 15%;
+  }
+  hr{
+    align-self: center;
+    margin-top: 0;
+    background: $border;
+    width: 70%;
+  }
+
+  .questionName, .questionNr, .finished{
+    color: $primary;
+  }
+  .finished{
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+@include media-breakpoint-up(sm){
+  .centerButton{
+    button{
+      width: 400px;
+    }
+  }
+}

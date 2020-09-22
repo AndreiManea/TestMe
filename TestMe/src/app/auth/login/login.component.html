@@ -1,0 +1,14 @@
+<div class="loginPage">
+  <h1>LOGIN</h1>
+  <form #loginForm = "ngForm" class="loginForm" (submit)="loginUser(loginForm)" autocomplete="off">
+      <label for="email">Email</label>
+      <input placeholder="student/teacher@e-uvt.ro"  class="form-control" id="email"  type="email" ngModel name="email" required="true">
+      <p class="errorMessage" *ngIf="invalidEmail">Please enter an e-uvt valid e-mail</p>
+      <label for="password">Password</label>
+      <input placeholder="Enter Password" class="form-control" id="password"  type="password" ngModel name="password" required="true">
+      <p class="errorMessage" *ngIf="invalidForm">Please fill both Username and Password fields.</p>
+      <button type="submit">LOGIN</button>
+  </form>
+  <a class='register' routerLink="/register">Don't have an account? Register now!</a>
+</div>
+

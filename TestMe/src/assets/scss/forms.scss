@@ -1,0 +1,51 @@
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+@mixin form{
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+}
+
+@mixin label{
+  padding-left: 40px;
+  margin-bottom: 0;
+}
+
+@mixin formControl{
+  border: none;
+  width: 75%;
+  margin: 0 auto 20px;
+  color: $tertiary;
+  padding: 0;
+  border-bottom: 1px solid $border;
+  background: transparent;
+  &:focus{
+    box-shadow: none;
+  }
+  &::placeholder{
+    color: $placeholderMain;
+  }
+
+}
+
+@mixin  errorMessage{
+  font-size: 15px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  padding: 0;
+  text-align: center;
+  color: $primary;
+}
+
+@mixin submitButton{
+  align-self: center;
+  margin-top: 10px;
+  width: 60%;
+  letter-spacing: 1px;
+  padding: 5px 20px;
+  background-color: transparent;
+  border: 1px solid $border;
+}
+

@@ -1,0 +1,124 @@
+@import "src/assets/scss/colors";
+@import "src/assets/scss/createTest";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+$buttonsFont: 18px;
+
+*{
+  color: white;
+}
+
+.quizForm {
+  background: $secondary;
+  border: 1px solid $border;
+  display: flex;
+  max-width: 95%;
+  margin: 10px auto;
+  flex-direction: column;
+  justify-content: center;
+  .title{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+  .quizInput{
+    @include input;
+    font-size: 15px;
+    margin: 15px 3%;
+    width: 85%;
+  }
+  .answerInput{
+    display: block;
+    width: 35%;
+  }
+  .addQuestion{
+    display: block;
+    background: $primary;
+    padding: 2.5px 10px;
+    font-size: 12px;
+    border: 1px solid $border;
+    color: $tertiary;
+    margin: 0 3%;
+    width: 40%;
+    transition: 0.3s;
+    &:focus{
+      box-shadow: none;
+      outline: none;
+    }
+  }
+  .quizCodeInput{
+    @include input;
+    font-size: 13px;
+    margin-top: 15px;
+    margin-left: 3%;
+  }
+  .centerButton{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    .saveTest{
+      width: 50%;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-align: center;
+      border: 1px solid $border;
+      color: $primary;
+      background: #172034;
+      &:focus{
+        box-shadow: none;
+        outline: none;
+      }
+    }
+  }
+
+}
+
+@include media-breakpoint-up(sm){
+  .quizForm {
+    .title{
+      margin-top: 15px;
+      text-align: center;
+      font-size: 25px;
+      letter-spacing: 1px;
+    }
+    .quizInput{
+      font-size: 20px;
+      &::placeholder{
+        font-size: 20px;
+      }
+    }
+    .addQuestion{
+      font-size: 17px;
+    }
+    .quizCodeInput{
+      font-size: 18px;
+      &::placeholder{
+        font-size: 18px;
+      }
+    }
+    .centerButton{
+      .saveTest{
+        font-size: 20px;
+        }
+      }
+    }
+
+  }
+
+@include media-breakpoint-up(md){
+  .quizForm{
+    .addQuestion{
+      width: 30%;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg){
+
+}
+
+@include media-breakpoint-up(xl){
+
+}

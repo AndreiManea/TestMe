@@ -1,0 +1,26 @@
+@mixin resultsTitle{
+  color: #FFFFFF;
+  text-align: center;
+  margin: 20px auto;
+}
+
+@mixin table{
+  margin: 10px auto;
+  max-width: 75%;
+}
+
+@mixin th{
+  color: $primary;
+  background: $backgroundNav;
+  border: 1px solid $border;
+  font-size: 15px;
+  text-align: center;
+}
+
+@mixin td{
+  text-align: center;
+  background: $secondary;
+  border: 1px solid $border;
+  font-size: 10px;
+  vertical-align: middle;
+}

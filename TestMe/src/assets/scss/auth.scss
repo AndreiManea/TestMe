@@ -1,0 +1,16 @@
+
+@mixin authPage{
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin title{
+  font-size: 30px;
+  text-align: left;
+  padding-top: 30px;
+  padding-left: 40px;
+  letter-spacing: 1px;
+}
+
+
+

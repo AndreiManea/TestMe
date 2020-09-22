@@ -1,0 +1,25 @@
+<div class="quizCodePage" *ngIf="mode === 'startQuizCode'">
+  <h2>Take Test</h2>
+  <form #quizCodeForm="ngForm" class="takeQuizForm" (submit)="startQuiz(quizCodeForm)" autocomplete="off">
+    <input placeholder="Enter Test Code"  class="form-control" id="quizCode"  type="email" ngModel name="quizCode" required>
+    <button  type="submit">Start Test</button>
+  </form>
+</div>
+
+
+<div class="quizStartPage" *ngIf="mode === 'startQuiz'">
+  <h2>{{quizToTake?.quizTitle}}</h2>
+  <form [formGroup]="quizForm" class="userForm" (submit)="submitQuiz(quizForm)" >
+    <div class="question">
+      <app-take-question [questions]="questions" [question]="questionsData(quizForm)" (questionNrEmitter)="getQuestionNr($event)"></app-take-question>
+    </div>
+    <button class="submitQuiz" *ngIf="questionNr === questions.length"  type="submit">Submit Quiz</button>
+  </form>
+</div>
+
+<div *ngIf="mode === 'resultQuiz'" class="quizResultPage" >
+  <h3 class="result">Result</h3>
+  <h4 class="quizTitle">{{quizToTake?.quizTitle}}</h4>
+  <p>You have answered <span class="correct">{{result}}</span> out of <span style="margin-left: 3px" class="correct"> {{questions.length}}</span> questions correctly !</p>
+</div>
+

@@ -1,0 +1,134 @@
+@import "src/assets/scss/colors";
+@import "src/assets/scss/auth";
+@import "src/assets/scss/forms";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+*{
+  color: white;
+}
+.registerPage{
+  @include authPage;
+  h1{
+    @include title;
+  }
+  .registerForm{
+    @include form;
+    .errorMessage{
+      @include errorMessage
+    }
+    label{
+      @include label;
+    }
+    .form-control{
+      @include formControl
+    }
+    button{
+      @include submitButton;
+      width: 62%;
+      margin-bottom: 10px;
+    }
+    mat-radio-group{
+      text-align: left;
+      padding-left: 27.5px;
+      font-size: 0.9em;
+      margin-bottom: 5px;
+      margin-top: 10px;
+      mat-radio-button{
+        margin-left: 15px;
+      }
+
+    }
+  }
+}
+
+
+@include media-breakpoint-up(sm) {
+  .registerPage{
+    h1{
+      text-align: center;
+      padding-left: 0;
+      font-size: 40px;
+    }
+    .registerForm{
+      margin-top: 20px;
+      .errorMessage{
+        font-size: 22px;
+      }
+      label{
+        font-size: 1.4em;
+        padding-left: 68px;
+      }
+      .form-control{
+        &::placeholder{
+          font-size: 1.3em;
+        }
+      }
+      button{
+        margin-top: 30px;
+        font-size: 25px;
+      }
+      mat-radio-group{
+        padding-left: 60px;
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(md) {
+  .registerPage{
+    h1{
+      font-size: 45px;
+      letter-spacing: 2px;
+    }
+    .registerForm{
+      label{
+        font-size: 1.6em;
+        padding-left: 90px;
+      }
+      .form-control{
+        &::placeholder{
+          font-size: 1.4em;
+        }
+      }
+      button{
+        letter-spacing: 2px;
+        font-size: 28px;
+      }
+      mat-radio-group{
+        padding-left: 80px;
+        font-size: 1.35em;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .registerPage{
+    .registerForm{
+      label{
+        padding-left: 120px;
+      }
+      button{
+        &:hover{
+          color: $primary;
+        }
+      }
+      mat-radio-group{
+        padding-left: 110px;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(xl) {
+  .registerPage{
+    .registerForm{
+      label{
+        padding-left: 140px;
+      }
+      mat-radio-group{
+        padding-left: 135px;
+      }
+    }
+  }
+}
+

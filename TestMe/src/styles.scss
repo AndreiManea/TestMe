@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import "src/assets/scss/colors";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Sylfaen, serif;
+  background: $backgroundMain;
+  .custom-dialog-container .mat-dialog-container{
+    background: $secondary;
+    color: $primary;
+  }
+}
+
+@include media-breakpoint-up(md){
+  body{
+    .custom-dialog-container .mat-dialog-container{
+      width: 80vw;
+    }
+  }
+}

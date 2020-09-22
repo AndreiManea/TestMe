@@ -1,0 +1,18 @@
+  <h2>Tests Taken</h2>
+  <table class="table table-dark">
+    <thead>
+    <tr>
+      <th scope="col">Test Title</th>
+      <th scope="col" >Teacher</th>
+      <th scope="col">Result</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let result of results; let nr = index">
+      <td class="title">{{result.quizTitle}}</td>
+      <td>{{result.creator}}</td>
+      <td>{{result.result}} / {{result.questionsNr}}</td>
+    </tr>
+    </tbody>
+  </table>
+

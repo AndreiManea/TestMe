@@ -1,0 +1,15 @@
+<div class="questionForm" [formGroup]="question">
+  <input class="questionInput" formControlName="questionTitle" placeholder="Question {{nr + 1}}" required>
+  <button color="warn" (click)="removeQuestion(question.controls.id.value)"
+          type="button" class="deleteQuestion">DELETE
+  </button>
+</div>
+
+
+<div class="answerForm" *ngFor="let answer of questionsData().controls; let nr = index">
+  <app-answer (deleteAnswerId)="deleteAnswer($event)" [answer]="answer" [nr]="nr"></app-answer>
+</div>
+
+<button (click)=" addAnswer()" type="button" class="addAnswer">
+  Add Answer
+</button>

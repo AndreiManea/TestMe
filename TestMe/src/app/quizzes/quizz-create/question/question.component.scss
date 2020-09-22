@@ -1,0 +1,76 @@
+@import "src/assets/scss/colors";
+@import "src/assets/scss/createTest";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+.questionForm{
+  margin: 0 3%;
+  .questionInput{
+    @include input;
+    width: 60%;
+    margin-top: 0;
+    caret-color: #FFFFFF;
+    font-size: 12px;
+    &::placeholder{
+      font-size: 12px;
+    }
+  }
+}
+.answerInput{
+  min-width: 30%;
+}
+.deleteQuestion {
+  margin-left: 10px;
+  font-size: 13px;
+  padding: 0 10px;
+  color: whitesmoke;
+  vertical-align: middle;
+  background: $incorrect;
+  border: 1px solid $border;
+  transition: 0.3s;
+  &:focus{
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.addAnswer{
+  display: block;
+  background: #172034;
+  padding: 2.5px 10px;
+  font-size: 10px;
+  border: 1px solid $border;
+  color: $tertiary;
+  margin: 0 3%;
+  width: 30%;
+  transition: 0.3s;
+  margin-bottom: 10px;
+  &:focus{
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+@include media-breakpoint-up(sm){
+  .questionForm{
+    .questionInput{
+      font-size: 17px;
+      &::placeholder{
+        font-size: 17px;
+      }
+    }
+  }
+  .deleteQuestion {
+    font-size: 18px;
+  }
+  .addAnswer{
+    font-size: 15px;
+  }
+}
+
+@include media-breakpoint-up(md){
+    .addAnswer{
+      width: 25%;
+    }
+}
+

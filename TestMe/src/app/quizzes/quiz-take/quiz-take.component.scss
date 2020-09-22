@@ -1,0 +1,99 @@
+@import "src/assets/scss/colors";
+@import "src/assets/scss/forms";
+@import "src/assets/scss/takeTest";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+*{
+  color: white;
+}
+.quizCodePage{
+  @include form;
+  h2{
+   @include testTitle;
+  }
+  .takeQuizForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    .form-control{
+      @include formControl;
+      &::placeholder{
+        color: $primary;
+      }
+    }
+    button{
+      @include submitButton;
+      background: $secondary;
+      color: $tertiary;
+    }
+  }
+
+}
+
+.quizStartPage{
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 64px);
+  h2{
+    @include testTitle;
+  }
+    .userForm{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      .question{
+        width: 100%;
+      }
+      .submitQuiz{
+        background: $secondary;
+        color: $tertiary;
+        width: 200px;
+        margin: 20px auto;
+        padding: 0px 10px;
+        border: 1px solid $border;
+      }
+    }
+  }
+
+.quizResultPage{
+  text-align: center;
+  .result{
+    font-size: 25px;
+    margin: 20px auto;
+  }
+  .quizTitle{
+    font-size: 20px;
+    margin: 20px auto;
+  }
+  p{
+    color: $primary;
+    font-size: 17px;
+    .correct{
+      color: $correct;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm){
+  .quizStartPage{
+    .userForm{
+      .submitQuiz{
+        width: 400px;
+      }
+    }
+  }
+  .quizResultPage{
+    .result{
+      font-size: 30px;
+    }
+    .quizTitle{
+      font-size: 25px;
+    }
+    p{
+      font-size: 18px;
+    }
+  }
+}

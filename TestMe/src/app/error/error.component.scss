@@ -1,0 +1,29 @@
+@import "src/assets/scss/colors";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+
+.mat-dialog-actions{
+  .mat-button{
+    background: $primary;
+    color: #FFFFFF;
+    &:focus{
+      outline: none;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .mat-dialog-title{
+    font-size: 30px;
+  }
+  .mat-dialog-content{
+    font-size: 27px;
+  }
+  .mat-dialog-actions{
+    .mat-button{
+      font-size: 23px;
+    }
+  }
+}
